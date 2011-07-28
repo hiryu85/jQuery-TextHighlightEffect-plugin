@@ -14,21 +14,19 @@
  *       (#h_1 .hbg { background-color: red; }
  */
 jQuery.fn.textHighlight = function() {
-    // console.log('call $().textHighlight()')
     this.each(function(i, highlight) {
         var c = null
 
         var $h = jQuery(highlight)
         var w = parseInt($h.outerWidth())
         var h = parseInt($h.innerHeight())
-        if (!$h.hasClass('h')) $h.addClass('h')
-
-        $h.html('<span class="ht">' + $h.text() + '</span>' + '<div 
-class="hbg"></div>')
+        
+        $h.addClass('h')
+        $h.html('<span class="ht">'+$h.text()+'</span> <div class="hbg"></div>')
+        
         // Get highlight backgroundcolor
         if ($h.attr('data-highlight')) c = $h.attr('data-highlight')
-        else if (jQuery('.hbg', $h).css('background-color') != "rgba(0, 
-0, 0, 0)") {
+        else if (jQuery('.hbg', $h).css('background-color') != "rgba(0, 0, 0, 0)") {
             // from CSS property (#my-el.hbg { background-color:red})
             c = jQuery('.hbg', $h).css('background-color')
             //console.log('CSS property: ' + c)
@@ -43,4 +41,4 @@ class="hbg"></div>')
             height: h + 'px',
         }, 800, function() {})
     })
-
+}
