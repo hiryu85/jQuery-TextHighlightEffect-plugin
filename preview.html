@@ -1,0 +1,26 @@
+<html>
+ <head>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+ <!-- Required -->   
+  <script type="text/javascript" src="jquery-texthighlighter.js"></script>
+  <link rel="stylesheet" type="text/css"  href="style.css" />
+ <!-- Required --> 
+  <script type="text/javascript">
+   $(function() { 
+     $('.important').textHighlight();
+   })
+  </script>
+ </head>
+ <body>
+ <h1>jQuery TextHighlighter</h1>
+ <p>
+    Hi, this is a dimostration about this plugin...
+    <span class="important">this is a cool effect</span>, isnt true?
+ </p>
+ <hr />
+ <p>
+  Another dimostration... you can give to $('#your-element').textHilight() a highlight color with <span class="important" 
+data-highlight="orange">data-highlight="yourcolor"</span> attribute. 
+ </p>
+ </body>
+</html>
