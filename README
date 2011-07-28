@@ -1,0 +1,23 @@
+=== TextHighlight plugin ===
+Written by Mirko Chialastri <chialastri.mirko@gmail.com>
+
+=== How to use jQuery-TextHighlight ? ===
+1 Include in your page:
+
+    * jquery-texthighlight.js
+    * style.css
+
+2. Wrap text that you want highlight on a <span> (with ID or class)
+3. Launch effect with $('selector').textHighlight()
+
+
+=== How to change highilight background color? ===
+
+1. With data-highlight="color" span attribute  
+2. With CSS (#your-element .hbg { background-color: green; color: black }
+
+See preview.html
+
+
+== Knowed bug ==
+TextHighlight works well only if the text does not wrap (sorry).
