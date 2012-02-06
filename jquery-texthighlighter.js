@@ -25,7 +25,7 @@ jQuery.fn.textHighlight = function() {
         $h.html('<span class="ht">'+$h.text()+'</span> <div class="hbg"></div>')
         
         // Get highlight backgroundcolor
-        if ($h.attr('data-highlight')) c = $h.data('highlight')
+        if ($h.data('highlight')) c = $h.data('highlight')
         else if (jQuery('.hbg', $h).css('background-color') != "rgba(0, 0, 0, 0)") {
             // from CSS property (#my-el.hbg { background-color:red})
             c = jQuery('.hbg', $h).css('background-color')
