@@ -49,13 +49,12 @@
   <script>
     $(function () {        
         $('#demo').click(function (e) {
-            var $t = $('.highlight'), color = $('#colors input:radio:checked');
+            var $t = $('.highlight'), color = $('#colors input:radio:checked').val();
              // Remove previous highlight
             $t.removeClass('h')    
-            $('.hbg', $t).remove()
+            $('.hbg', $t).remove()            
             // Run animation
-            $t.data('highlight', color)
-            $t.textHighlight()
+            $t.attr('data-highlight', color).textHighlight()
         })
     })
   </script>
