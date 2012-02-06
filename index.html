@@ -2,9 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8'>
-
   <title>hiryu85/jQuery-TextHighlightEffect-plugin @ GitHub</title>
-
   <style type="text/css">
     body {
       margin-top: 1.0em;
@@ -27,9 +25,41 @@
     pre { background: #000; color: #fff; padding: 15px;}
     hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
     .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
-</head>
 
+    #demo {
+        display: block; width: 200px; margin: 20px;
+        background-color: whiteSmoke; box-shadow: 1px 1px gray; border-radius: 10px;
+        color: black; padding: 10px; text-shadow: 2px 1px gray; font-size: 2em;
+    }
+        #demo:hover { background-color: gray; color: white; text-shadow: 2px 1px black; }
+        
+    #colors {
+        width: 300px;
+    }
+        #colors fieldset { border:0; }
+  </style>
+  
+  <!-- Start: Copy and paste in your page -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script src="jquery-texthighlighter.js"></script>
+  <script>$(function() { $('.highlight').textHighlight() })</script>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <!-- End -->
+  
+  <script>
+    $(function () {        
+        $('#demo').click(function (e) {
+            var $t = $('.highlight'), color = $('#colors input:radio:checked');
+             // Remove previous highlight
+            $t.removeClass('h')    
+            $('.hbg', $t).remove()
+            // Run animation
+            $t.data('highlight', color)
+            $t.textHighlight()
+        })
+    })
+  </script>
+</head>
 <body>
   <a href="https://github.com/hiryu85/jQuery-TextHighlightEffect-plugin"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
 
@@ -42,33 +72,34 @@
         <img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
     </div>
 
-    <h1><a href="https://github.com/hiryu85/jQuery-TextHighlightEffect-plugin">jQuery-TextHighlightEffect-plugin</a>
+    <h1><a href="https://github.com/hiryu85/jQuery-TextHighlightEffect-plugin">jQuery highlight effect</a>
       <span class="small">by <a href="https://github.com/hiryu85">hiryu85</a></span></h1>
 
     <div class="description">
-      A text's highlight animation for jQuery
+      <p>A text's highlight animation for jQuery</p>
+      <p>Please read <span class="highlight">README file</span> for more info</p>
     </div>
-
     
+    <form id="colors">
+     <fieldset>
+     <legend>Select a color and click on button for change color</legend>
+     <input type="radio" name="color" value="yellow" checked="checked" /> yellow
+     <input type="radio" name="color" value="red" /> red
+     <input type="radio" name="color" value="#e4e4e4" /> #e4e4e4
+    </fieldset>
+    </form>
+    
+    <a href="#" id="demo">Test it now</a>
 
     
       <h2>Dependencies</h2>
       <p>jQuery</p>
     
-
-    
-
-    
-
     
       <h2>Authors</h2>
-      <p>Mirko (chialastri.mirko@gmail.com)<br/>      </p>
+      <p>Mirko Chialastri</p>
     
 
-    
-      <h2>Contact</h2>
-      <p>Mirko Chialastri (chialastri.mirko@gmail.com)<br/>      </p>
-    
 
     <h2>Download</h2>
     <p>
